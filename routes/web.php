@@ -30,6 +30,13 @@ route::get('/contact', function(){
     return 'Selamat Datang Di halaman Contact';
 });
 
+route::get('/siswa',function(){
+
+  $data_siswa = ['keydra','Napis','Opet','Daffa','Agus','Kiki'];
+
+  return view('tampil',compact('data_siswa'));
+ });
+
 route::get('/tes/{nama2}/{tl2}/{jk2}/{agamar2}/{alamat2}', function($nama,$tl,$jk,$agama,$alamat){
     return  "Nama :" .$nama. "<br>". 
             "Tempat Lahir :" .$tl. "<br>". 
