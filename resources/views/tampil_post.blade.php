@@ -6,10 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h4>Data Siswa</h4>
 
-    @foreach($data_siswa as $data)
-            <li>{{ $data }}</li>
+    @foreach($post as $data)
+    <table border=0 >
+        <tr>
+            <td>{{ $data->id }}</td>
+            <td>{{ $data->title }}</td>
+            <td>{{ $data->content }}</td>
+        </tr>
+    </table>
+    <hr>   
     @endforeach
     
 </body>

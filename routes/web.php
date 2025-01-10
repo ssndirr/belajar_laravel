@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Postscontroller;
+use App\Http\Controllers\Barangscontroller;
+use App\Http\Controllers\Siswascontroller;
+use App\Http\Controllers\Ppdbscontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,3 +114,17 @@ route::get('/latihan/{nama}/{tel}/{jenis}/{nb}/{jml}/{bayar}', function($nama,$t
            "Potongan :" .number_format($potong). "<br>---------------------------------------<br>". 
            "Total Pembayaran :" .number_format($tp) ; 
 });
+
+// route model
+route::get('/post', [Postscontroller::class, 'menampilkan']);
+// route::get('/barang', [postscontroller::class, 'menampilkan2']);
+route::get('/barang', [Barangscontroller::class, 'menampilkan']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//crud 
+Route::resource('siswa',Siswascontroller::class);
+
+// ppdb
+Route::resource('ppdb',Ppdbscontroller::class);
